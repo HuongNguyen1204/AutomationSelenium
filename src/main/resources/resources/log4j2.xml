@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+
+	<Properties>
+		<Property name="basePath">./logs</Property>
+		<Property name="LOG_PATTERN">%d{HH🇲🇲ss.SSS} %-5p- %msg%n</Property>
+	</Properties>
+
+	<Appenders>
+
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}"/>
+		</Console>
+
+		<RollingFile name="file" fileName="${basePath}/RailWays.log"
+					 filePattern="${basePath}/application-debug-%d{yyyy-MM-dd}-%i.log">
+			<LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="${LOG_PATTERN}"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+
+		<RollingFile name="infoLog" fileName="${basePath}/RailWays.log"
+					 filePattern="${basePath}/application-info-%d{yyyy-MM-dd}-%i.log" >
+			<LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="${LOG_PATTERN}"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+
+		<RollingFile name="errorLog" fileName="${basePath}/RailWays.log"
+					 filePattern="${basePath}/application-error-%d{yyyy-MM-dd}-%i.log" >
+			<LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="${LOG_PATTERN}"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+
+	</Appenders>
+
+	<Loggers>
+		<Root level="all">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="debugLog" />
+			<AppenderRef ref="infoLog" />
+			<AppenderRef ref="errorLog" />
+		</Root>
+	</Loggers>
+
+</Configuration>
