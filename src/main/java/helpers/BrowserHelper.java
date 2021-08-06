@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Constants;
@@ -72,26 +70,9 @@ public class BrowserHelper {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void switchToDefaultContent() {
-        driver.switchTo().defaultContent();
-    }
-
-    public static void switchToIframe(WebElement element) {
-        driver.switchTo().frame(element);
-    }
-
-    public static void clickByJs(WebElement element) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", element);
-    }
-
-    public static void switchToWindow(String handels) {
-        driver.switchTo().window(handels);
-    }
-
-    public static boolean waitForTitle(String title, int seconds) {
-        WebDriverWait wait = new WebDriverWait(driver, seconds);
-        return wait.until(ExpectedConditions.titleIs(title));
+    public static void waitToBeClick(WebElement element, int seconds){
+        WebDriverWait wait = new WebDriverWait(driver,seconds);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 }

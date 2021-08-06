@@ -3,34 +3,20 @@
     <test name="ChromeTest">
         <parameter name="browser" value="CHROME" />
         <classes>
-            <class name="testcases.ArticleTest"/>
-            <class name="testcases.ContactTest"/>
-            <class name="testcases.BannerTest"/>
-            <class name="testcases.BannerClientTest"/>
-            <class name="testcases.CategoryTest"/>
-            <class name="testcases.WebLinkTest"/>
+            <class name="testcases.GoogleTest"/>
+            <class name="testcases.YoutubeTest"/>
         </classes>
     </test>
     <test name="FirefoxTest">
         <parameter name="browser" value="FIREFOX" />
         <classes>
-            <class name="testcases.ArticleTest"/>
-            <class name="testcases.ContactTest"/>
-            <class name="testcases.BannerTest"/>
-            <class name="testcases.BannerClientTest"/>
-            <class name="testcases.CategoryTest"/>
-            <class name="testcases.WebLinkTest"/>
+
         </classes>
     </test>
     <test name="EdgeTest">
         <parameter name="browser" value="EDGE" />
         <classes>
-<!--            <class name="testcases.ArticleTest"/>-->
-<!--            <class name="testcases.ContactTest"/>-->
-<!--            <class name="testcases.BannerTest"/>-->
-<!--            <class name="testcases.BannerClientTest"/>-->
-<!--            <class name="testcases.CategoryTest"/>-->
-<!--            <class name="testcases.WebLinkTest"/>-->
+
         </classes>
     </test>
 </suite>
