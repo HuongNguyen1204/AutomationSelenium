@@ -1,7 +1,6 @@
 package helpers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -60,18 +59,13 @@ public class BrowserHelper {
         return driver;
     }
 
-    public static void scrollToView(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", element);
-    }
-
     public static void waitForElement(WebElement element, int seconds) {
         WebDriverWait wait = new WebDriverWait(driver, seconds);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void waitToBeClick(WebElement element, int seconds){
-        WebDriverWait wait = new WebDriverWait(driver,seconds);
+    public static void waitToBeClick(WebElement element, int seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, seconds);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 

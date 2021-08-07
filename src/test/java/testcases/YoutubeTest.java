@@ -15,7 +15,7 @@ public class YoutubeTest extends BaseTest{
         Log.info("Go to google page");
 
         Log.info("Search for Heal The World");
-        youtubePage.search(Constants.KEYWORLD);
+        youtubePage.search(Constants.KEY_WORLD);
 
         Log.info("Click on the first Video");
         youtubePage.clickToFirstVideo();
@@ -24,7 +24,9 @@ public class YoutubeTest extends BaseTest{
         youtubePage.playAndPauseVideo(Constants.TIME_WAITS_PAUSE);
 
         Log.info("Verify title video is  same to Google result");
-        Assert.assertTrue(youtubePage.verifyTitleVideo(Constants.KEYWORLD));
+        Assert.assertTrue(youtubePage.verifyTitleVideo(Constants.KEY_WORLD));
 
+        Log.info("Verify video play and pause correctly");
+        Assert.assertTrue(youtubePage.verifyVideoPlayInTime(),"Video play and pause incorrectly");
     }
 }

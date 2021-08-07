@@ -23,9 +23,9 @@ public class BasePage {
         textBox().sendKeys(Keys.ENTER);
     }
 
-    public boolean verifyTitleInList(List <WebElement> titles, String value){
+    public boolean verifyTitleInList(List<WebElement> titles, String value) {
         boolean result = true;
-        for (WebElement title: titles){
+        for (WebElement title : titles) {
             result = title.getText().toLowerCase().contains(value.toLowerCase());
         }
         return result;
