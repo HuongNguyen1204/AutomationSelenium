@@ -7,16 +7,4 @@
             <class name="testcases.YoutubeTest"/>
         </classes>
     </test>
-    <test name="FirefoxTest">
-        <parameter name="browser" value="FIREFOX" />
-        <classes>
-
-        </classes>
-    </test>
-    <test name="EdgeTest">
-        <parameter name="browser" value="EDGE" />
-        <classes>
-
-        </classes>
-    </test>
 </suite>
