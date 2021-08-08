@@ -10,11 +10,11 @@ import static helpers.BrowserHelper.getWebDriver;
 
 public class BasePage {
     //selector
-    private By _textBox = By.cssSelector("input[name=q]");
+    private By textBoxSearch = By.cssSelector("input[name=q]");
 
     //Elements
     private WebElement textBox() {
-        return getWebDriver().findElement(_textBox);
+        return getWebDriver().findElement(textBoxSearch);
     }
 
     //Method
@@ -23,11 +23,10 @@ public class BasePage {
         textBox().sendKeys(Keys.ENTER);
     }
 
-    public boolean verifyTitleInList(List<WebElement> titles, String value) {
-        boolean result = true;
+    public boolean isAllTitlesContainValue(List<WebElement> titles, String value) {
         for (WebElement title : titles) {
-            result = title.getText().toLowerCase().contains(value.toLowerCase());
+            if(!title.getText().toLowerCase().contains(value.toLowerCase())) return false;
         }
-        return result;
+        return true;
     }
 }

@@ -9,31 +9,31 @@ import static helpers.BrowserHelper.*;
 public class YoutubePage extends BasePage {
 
     //Selector
-    private By _firstVideo = By.xpath("//h3[@class='LC20lb MMgsKf']");
-    private By _playButton = By.xpath("//button[@title='Play (k)']");
-    private By _pauseButton = By.xpath("//button[@title='Pause (k)']");
-    private By _titleVideo = By.xpath("//h1[@class='title style-scope ytd-video-primary-info-renderer']");
-    private By _body = By.tagName("body");
+    private By lblFirstVideo = By.xpath("//h3[@class='LC20lb MMgsKf']");
+    private By btnPlay = By.xpath("//button[@title='Play (k)']");
+    private By btnPause = By.xpath("//button[@title='Pause (k)']");
+    private By lblTitleVideo = By.xpath("//h1[@class='title style-scope ytd-video-primary-info-renderer']");
+    private By bdPlayerContent = By.tagName("body");
 
     //Element
     private WebElement firstVideo() {
-        return getWebDriver().findElement(_firstVideo);
+        return getWebDriver().findElement(lblFirstVideo);
     }
 
-    private WebElement playButton() {
-        return getWebDriver().findElement(_playButton);
+    private WebElement buttonPlay() {
+        return getWebDriver().findElement(btnPlay);
     }
 
-    private WebElement pauseButton() {
-        return getWebDriver().findElement(_pauseButton);
+    private WebElement buttonPause() {
+        return getWebDriver().findElement(btnPause);
     }
 
     private WebElement titleVideo() {
-        return getWebDriver().findElement(_titleVideo);
+        return getWebDriver().findElement(lblTitleVideo);
     }
 
-    private WebElement body() {
-        return getWebDriver().findElement(_body);
+    private WebElement bodyPlayerContent() {
+        return getWebDriver().findElement(bdPlayerContent);
     }
 
     //Method
@@ -43,9 +43,9 @@ public class YoutubePage extends BasePage {
 
 
     public void playAndPauseVideo(int time) {
-        playButton().click();
-        waitForElement(pauseButton(), time);
-        body().sendKeys(Keys.SPACE);
+        buttonPlay().click();
+        waitForElement(buttonPause(), time);
+        bodyPlayerContent().sendKeys(Keys.SPACE);
     }
 
     public boolean verifyTitleVideo(String value) {
@@ -53,7 +53,7 @@ public class YoutubePage extends BasePage {
     }
 
     public boolean verifyVideoPlayInTime() {
-        return playButton().isDisplayed();
+        return buttonPlay().isDisplayed();
     }
 
 }

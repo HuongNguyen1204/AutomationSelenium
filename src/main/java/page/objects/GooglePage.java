@@ -11,36 +11,36 @@ import static helpers.BrowserHelper.getWebDriver;
 public class GooglePage extends BasePage {
 
     //Selector
-    private By _tilesMainResult = By.xpath("//h3[@class='LC20lb DKV0Md']");
-    private By _titlesVideoSection = By.xpath("//div[@class= 'fc9yUc oz3cqf p5AXld']");
-    private By _titlesPeopleAsk = By.xpath("//div[@jsname='jIA8B']");
+    private By lblTilesMainResult = By.xpath("//h3[@class='LC20lb DKV0Md']");
+    private By lblTitlesVideoSection = By.xpath("//div[@class= 'fc9yUc oz3cqf p5AXld']");
+    private By lblTitlesPeopleAsk = By.xpath("//div[@jsname='jIA8B']");
 
     //Element
 
     private List<WebElement> titlesMainResult() {
-        return getWebDriver().findElements(_tilesMainResult);
+        return getWebDriver().findElements(lblTilesMainResult);
     }
 
     private List<WebElement> titlesVideoSection() {
-        return getWebDriver().findElements(_titlesVideoSection);
+        return getWebDriver().findElements(lblTitlesVideoSection);
     }
 
     private List<WebElement> titlesPeopleAsk() {
-        return BrowserHelper.getWebDriver().findElements(_titlesPeopleAsk);
+        return BrowserHelper.getWebDriver().findElements(lblTitlesPeopleAsk);
     }
 
     //Method
 
     public boolean verifyMainResult(String value) {
-        return verifyTitleInList(titlesMainResult(), value);
+        return isAllTitlesContainValue(titlesMainResult(), value);
     }
 
     public boolean verifyVideoSections(String value) {
-        return verifyTitleInList(titlesVideoSection(), value);
+        return isAllTitlesContainValue(titlesVideoSection(), value);
     }
 
     public boolean verifyTitlesPeopleAsk(String value) {
-        return verifyTitleInList(titlesPeopleAsk(), value);
+        return isAllTitlesContainValue(titlesPeopleAsk(), value);
     }
 
 }
