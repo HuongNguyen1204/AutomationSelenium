@@ -6,10 +6,10 @@ import page.objects.YoutubePage;
 import utilities.Constants;
 import utilities.Log;
 
-public class YoutubeTest extends BaseTest{
+public class YoutubeTest extends BaseTest {
 
     @Test
-    public void Scenario02(){
+    public void YoutubeResultValidation() {
         YoutubePage youtubePage = new YoutubePage();
 
         Log.info("Go to google page");
@@ -27,6 +27,6 @@ public class YoutubeTest extends BaseTest{
         Assert.assertTrue(youtubePage.verifyTitleVideo(Constants.KEY_WORLD));
 
         Log.info("Verify video play and pause correctly");
-        Assert.assertTrue(youtubePage.verifyVideoPlayInTime(),"Video play and pause incorrectly");
+        Assert.assertTrue(youtubePage.verifyVideoPlayInTime(), "Video play and pause incorrectly");
     }
 }

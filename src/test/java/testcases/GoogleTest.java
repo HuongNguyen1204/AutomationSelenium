@@ -9,7 +9,7 @@ import utilities.Log;
 public class GoogleTest extends BaseTest {
 
     @Test
-    public void Scenario01() {
+    public void GoogleSearchValidation() {
         GooglePage googlePage = new GooglePage();
         Log.info("Go go Google page");
 
@@ -25,4 +25,5 @@ public class GoogleTest extends BaseTest {
         Log.info("Verify search results on People also ask");
         Assert.assertTrue(googlePage.verifyTitlesPeopleAsk(Constants.KEY_WORLD), "The text is not contained in the People also ask section");
     }
+
 }

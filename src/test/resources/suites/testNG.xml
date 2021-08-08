@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Suite1" verbose="1" >
+<suite name="Pre Test Selenium 2" verbose="1">
     <test name="ChromeTest">
-        <parameter name="browser" value="CHROME" />
+        <parameter name="browser" value="CHROME"/>
         <classes>
             <class name="testcases.GoogleTest"/>
             <class name="testcases.YoutubeTest"/>

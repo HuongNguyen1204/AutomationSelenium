@@ -2,8 +2,6 @@ package page.objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-
 import static helpers.BrowserHelper.*;
 
 public class YoutubePage extends BasePage {
@@ -15,45 +13,23 @@ public class YoutubePage extends BasePage {
     private By lblTitleVideo = By.xpath("//h1[@class='title style-scope ytd-video-primary-info-renderer']");
     private By bdPlayerContent = By.tagName("body");
 
-    //Element
-    private WebElement firstVideo() {
-        return getWebDriver().findElement(lblFirstVideo);
-    }
-
-    private WebElement buttonPlay() {
-        return getWebDriver().findElement(btnPlay);
-    }
-
-    private WebElement buttonPause() {
-        return getWebDriver().findElement(btnPause);
-    }
-
-    private WebElement titleVideo() {
-        return getWebDriver().findElement(lblTitleVideo);
-    }
-
-    private WebElement bodyPlayerContent() {
-        return getWebDriver().findElement(bdPlayerContent);
-    }
-
     //Method
     public void clickToFirstVideo() {
-        firstVideo().click();
+        getElement(lblFirstVideo).click();
     }
 
-
     public void playAndPauseVideo(int time) {
-        buttonPlay().click();
-        waitForElement(buttonPause(), time);
-        bodyPlayerContent().sendKeys(Keys.SPACE);
+        getElement(btnPlay).click();
+        waitForElement(getElement(btnPause),time);
+        getElement(bdPlayerContent).sendKeys(Keys.SPACE);
     }
 
     public boolean verifyTitleVideo(String value) {
-        return titleVideo().getText().toLowerCase().contains(value.toLowerCase());
+        return getElement(lblTitleVideo).getText().toLowerCase().contains(value.toLowerCase());
     }
 
     public boolean verifyVideoPlayInTime() {
-        return buttonPlay().isDisplayed();
+        return getElement(btnPlay).isDisplayed();
     }
 
 }
