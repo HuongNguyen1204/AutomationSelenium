@@ -19,10 +19,8 @@ public class BasePage {
     }
 
     public boolean isAllTitlesContainValue(List<WebElement> titles, String value) {
-        System.out.println("Expected: " + value.toLowerCase());
         for (WebElement title : titles) {
             if (!title.getText().toLowerCase().contains(value.toLowerCase())) return false;
-            System.out.println("Actual: " + title.getText().toLowerCase());
         }
         return true;
     }
