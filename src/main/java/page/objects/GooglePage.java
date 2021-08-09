@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static helpers.BrowserHelper.getWebDriver;
+import static helpers.BrowserHelper.*;
 
 public class GooglePage extends BasePage {
 
@@ -30,14 +30,11 @@ public class GooglePage extends BasePage {
     }
 
     //Method
-
     public boolean verifyMainResult(String value) {
         return isAllTitlesContainValue(titlesMainResult(), value);
     }
 
-    public boolean verifyVideoSections(String value) {
-        return isAllTitlesContainValue(titlesVideoSection(), value);
-    }
+    public boolean verifyVideoSections(String value) { return isAllTitlesContainValue(titlesVideoSection(), value); }
 
     public boolean verifyTitlesPeopleAsk(String value) {
         return isAllTitlesContainValue(titlesPeopleAsk(), value);

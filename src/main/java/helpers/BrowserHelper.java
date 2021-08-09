@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Constants;
@@ -65,8 +66,13 @@ public class BrowserHelper {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static WebElement getElement(By element){
-       return driver.findElement(element);
+    public static WebElement getElement(By element) {
+        return driver.findElement(element);
+    }
+
+    public static void hoverToElement(WebElement element) {
+        Actions action = new Actions(driver);
+        action.moveToElement(element).perform();
     }
 
 }

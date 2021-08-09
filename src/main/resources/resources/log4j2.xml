@@ -12,7 +12,7 @@
 			<PatternLayout pattern="${LOG_PATTERN}"/>
 		</Console>
 
-		<RollingFile name="file" fileName="${basePath}/RailWays.log"
+		<RollingFile name="file" fileName="${basePath}/PreTestSelenium2.log"
 					 filePattern="${basePath}/application-debug-%d{yyyy-MM-dd}-%i.log">
 			<LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
 			<PatternLayout pattern="${LOG_PATTERN}"/>
@@ -22,7 +22,7 @@
 			<DefaultRolloverStrategy max="10"/>
 		</RollingFile>
 
-		<RollingFile name="infoLog" fileName="${basePath}/RailWays.log"
+		<RollingFile name="infoLog" fileName="${basePath}/PreTestSelenium2.log"
 					 filePattern="${basePath}/application-info-%d{yyyy-MM-dd}-%i.log" >
 			<LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
 			<PatternLayout pattern="${LOG_PATTERN}"/>
@@ -32,7 +32,7 @@
 			<DefaultRolloverStrategy max="10"/>
 		</RollingFile>
 
-		<RollingFile name="errorLog" fileName="${basePath}/RailWays.log"
+		<RollingFile name="errorLog" fileName="${basePath}/PreTestSelenium2.log"
 					 filePattern="${basePath}/application-error-%d{yyyy-MM-dd}-%i.log" >
 			<LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
 			<PatternLayout pattern="${LOG_PATTERN}"/>
